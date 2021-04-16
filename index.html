@@ -27,73 +27,151 @@
         }
     </style>
     <script>
-        function rollDice() {
-            var die0 = document.getElementById("die0");
+        function rollD6() {
             var die1 = document.getElementById("die1");
             var die2 = document.getElementById("die2");
-            var die3 = document.getElementById("die3");
-            var die4 = document.getElementById("die4");
-            var die5 = document.getElementById("die5");
-            var die6 = document.getElementById("die6");
-            var die7 = document.getElementById("die7");
-
             var status = document.getElementById("status");
-            var d0 = Math.floor(Math.random() * 4) + 1;
             var d1 = Math.floor(Math.random() * 6) + 1;
             var d2 = Math.floor(Math.random() * 6) + 1;
-            var d3 = Math.floor(Math.random() * 8) + 1;
-            var d4 = Math.floor(Math.random() * 10) + 1;
-            var d5 = Math.floor(Math.random() * 12) + 1;
-            var d6 = Math.floor(Math.random() * 20) + 1;
-            var d7 = Math.floor(Math.random() * 100) + 1;
-
             var diceTotal = d1 + d2;
 
-            die0.innerHTML = d0;
+
             die1.innerHTML = d1;
             die2.innerHTML = d2;
-            die3.innerHTML = d3;
-            die4.innerHTML = d4;
-            die5.innerHTML = d5;
-            die6.innerHTML = d6;
-            die7.innerHTML = d7;
             status.innerHTML = "You rolled a " + diceTotal + ".";
 
             if (d1 == d2) {
                 status.innerHTML = "DOUBLES!! You get a free roll!";
             }
+        }
 
+        function rollD4() {
+            var die0 = document.getElementById("die0");
+            var status = document.getElementById("status");
+            var d0 = Math.floor(Math.random() * 4) + 1;
+            var diceTotal = d0;
+            die0.innerHTML = d0;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        }
+
+        function rollD8() {
+            var die3 = document.getElementById("die3");
+            var status = document.getElementById("status");
+            var d3 = Math.floor(Math.random() * 8) + 1;
+            var diceTotal = d3;
+            die3.innerHTML = d3;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        }
+
+        function rollD10() {
+            var die4 = document.getElementById("die4");
+            var status = document.getElementById("status");
+            var d4 = Math.floor(Math.random() * 10) + 1;
+            var diceTotal = d4;
+            die4.innerHTML = d4;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
 
 
         }
+
+        function rollD12() {
+            var die5 = document.getElementById("die5");
+            var status = document.getElementById("status");
+            var d5 = Math.floor(Math.random() * 12) + 1;
+            var diceTotal = d5;
+            die5.innerHTML = d5;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        }
+
+        function rollD20() {
+            var die6 = document.getElementById("die6");
+            var status = document.getElementById("status");
+            var d6 = Math.floor(Math.random() * 20) + 1;
+            var diceTotal = d6;
+            die6.innerHTML = d6;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        }
+
+
+        function rollD100() {
+            var die7 = document.getElementById("die7");
+            var status = document.getElementById("status");
+            var d7 = Math.floor(Math.random() * 100) + 1;
+            var diceTotal = d7;
+            die7.innerHTML = d7;
+            status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        }
+        //var die4 = document.getElementById("die4");
+        //var die5 = document.getElementById("die5");
+        //var die6 = document.getElementById("die6");
+        //var die7 = document.getElementById("die7");
+
+
+        //var d0 = Math.floor(Math.random() * 4) + 1;
+
+
+        //var d4 = Math.floor(Math.random() * 10) + 1;
+        //var d5 = Math.floor(Math.random() * 12) + 1;
+        //var d6 = Math.floor(Math.random() * 20) + 1;
+        //var d7 = Math.floor(Math.random() * 100) + 1;
+
+        //die0.innerHTML = d0;
+        //die3.innerHTML = d3;
+        //die4.innerHTML = d4;
+        //die5.innerHTML = d5;
+        //die6.innerHTML = d6;
+        //die7.innerHTML = d7;
+        //status.innerHTML = "You rolled a " + diceTotal + ".";
+
+        //if (d1 == d2) {
+        //  status.innerHTML = "DOUBLES!! You get a free roll!";
+        //}
+
+
+
+        //}
     </script>
 </head>
 
 <body>
-    <h1>These are all the dice I need for D&D!</h1>
+    <h1 class="title">Random Encounters/ Attribute scores & More!! Use them for whatever you want!!</h1>
     <div id="die1" class="dice">0</div>
 
     <div id="die2" class="dice">0</div>
-    <button onclick="rollDice()">Roll Dice</button>
+    <button onclick="rollD6()">Roll Dice</button>
     <h2 id="status" style="clear:left"></h2>
     <br>
     <div class="secondary-dice">
+
+
+
+        <button onclick="rollD4()">Roll 4 sided</button>
         <h1>4 Sided die
             <div id="die0" class="dice">0</div>
         </h1>
 
+        <button onclick="rollD8()">Roll 8 sided</button>
         <h1>8 Sided die
             <div id="die3" class="dice">0</div>
         </h1>
+        <button onclick="rollD10()">Roll 10 sided</button>
         <h1>10 Sided die
             <div id="die4" class="dice">0</div>
         </h1>
+        <button onclick="rollD12()">Roll 12 sided</button>
         <h1>12 Sided die
             <div id="die5" class="dice">0</div>
         </h1>
+        <button onclick="rollD20()">Roll 20 sided</button>
         <h1>20 Sided die
             <div id="die6" class="dice">0</div>
         </h1>
+        <button onclick="rollD100()">Roll 100 sided</button>
         <h1>100 Sided die
             <div id="die7" class="dice">0</div>
         </h1>
