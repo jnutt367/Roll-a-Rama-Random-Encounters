@@ -33,25 +33,29 @@
         }
         
         button {
-            color: red;
+            color: white;
+            background-color: green;
         }
     </style>
     <script>
         function rollD6() {
             var die1 = document.getElementById("die1");
             var die2 = document.getElementById("die2");
+            var die3 = document.getElementById("die3");
             var status = document.getElementById("status");
             var d1 = Math.floor(Math.random() * 6) + 1;
             var d2 = Math.floor(Math.random() * 6) + 1;
-            var diceTotal = d1 + d2;
+            var d3 = Math.floor(Math.random() * 6) + 1;
+            var diceTotal = d1 + d2 + d3;
 
 
             die1.innerHTML = d1;
             die2.innerHTML = d2;
+            die3.innerHTML = d3;
             status.innerHTML = "You rolled a " + diceTotal + ".";
 
-            if (d1 == d2) {
-                status.innerHTML = "DOUBLES!! You get a free roll!";
+            if (d1 == d2 == d3) {
+                status.innerHTML = "Triples!! You get a free roll!";
             }
         }
 
@@ -66,11 +70,11 @@
         }
 
         function rollD8() {
-            var die3 = document.getElementById("die3");
+            var die8 = document.getElementById("die8");
             var status = document.getElementById("status");
-            var d3 = Math.floor(Math.random() * 8) + 1;
-            var diceTotal = d3;
-            die3.innerHTML = d3;
+            var d8 = Math.floor(Math.random() * 8) + 1;
+            var diceTotal = d8;
+            die8.innerHTML = d8;
             status.innerHTML = "You rolled a " + diceTotal + ".";
 
         }
@@ -150,13 +154,15 @@
 
 <body class="container">
     <div class="container">
-        <h1 class="">Roll for Attribute Scores:</h1>
+        <h2 class="">Roll for Attribute Scores:</h2>
         <a href="https://company-of-the-winter-dnd.vercel.app/">
             <h3>Back to Character Creator</h3>
         </a>
         <div id="die1" class="dice">0</div>
 
         <div id="die2" class="dice">0</div>
+
+        <div id="die3" class="dice">0</div>
         <button onclick="rollD6()">Roll Dice</button>
         <h2 id="status" style="clear:left"></h2>
         <br>
@@ -171,7 +177,7 @@
 
             <button onclick="rollD8()">Roll 8 sided</button>
             <h1>8 Sided die
-                <div id="die3" class="dice">0</div>
+                <div id="die8" class="dice">0</div>
             </h1>
             <button onclick="rollD10()">Roll 10 sided</button>
             <h1>10 Sided die
