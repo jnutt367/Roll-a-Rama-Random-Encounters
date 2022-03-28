@@ -29,13 +29,14 @@
         
         .secondary-dice {
             margin-top: 25px;
-            display: grid;
         }
         
         button {
             color: white;
             background-color: green;
         }
+        
+        @media only screen and (max-width: 300px) {}
     </style>
     <script>
         function rollD6() {
@@ -56,6 +57,9 @@
 
             if (d1 == d2 == d3) {
                 status.innerHTML = "Triples!! You get a free roll!";
+            }
+            if (d1 + d2 + d3 >= 13) {
+                status.innerHTML = "You rolled a " + diceTotal + " , Great Roll,  I'd keep it!";
             }
         }
 
@@ -166,7 +170,7 @@
         <button onclick="rollD6()">Roll Dice</button>
         <h2 id="status" style="clear:left"></h2>
         <br>
-        <div class="secondary-dice">
+        <div class="secondary-dice container">
 
 
 
@@ -184,18 +188,23 @@
                 <div id="die4" class="dice">0</div>
             </h1>
             <button onclick="rollD12()">Roll 12 sided</button>
-            <h1>12 Sided die
-                <div id="die5" class="dice">0</div>
-            </h1>
-            <button onclick="rollD20()">Roll 20 sided</button>
-            <h1>20 Sided die
-                <div id="die6" class="dice">0</div>
-            </h1>
-            <button onclick="rollD100()">Roll 100 sided</button>
-            <h1>100 Sided die
-                <div id="die7" class="dice">0</div>
-            </h1>
+
+            <div class="container lower-dice">
+                <h1>12 Sided die
+                    <div id="die5" class="dice">0</div>
+                </h1>
+                <button onclick="rollD20()">Roll 20 sided</button>
+                <h1>20 Sided die
+                    <div id="die6" class="dice">0</div>
+                    Roll for encounters
+                </h1>
+                <button onclick="rollD100()">Roll 100 sided</button>
+                <h1>100 Sided die
+                    <div id="die7" class="dice">0</div>
+                </h1>
+            </div>
         </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
