@@ -12,7 +12,7 @@
         div.dice {
             float: left;
             width: 32px;
-            background: black;
+            background: darkgreen;
             border: #999 1px solid;
             padding: 10px;
             font-size: 24px;
@@ -23,8 +23,24 @@
             border-radius: 15px;
         }
         
+        body {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+        }
+        
+        #die0 {
+            background-color: darkgreen;
+        }
+        
+        h1 {
+            font-size: 1em;
+        }
+        
         h3 {
             color: white;
+            font-size: 1.4em;
         }
         
         .secondary-dice {
@@ -32,11 +48,10 @@
         }
         
         button {
+            max-width: 75px;
             color: white;
             background-color: green;
         }
-        
-        @media only screen and (max-width: 300px) {}
     </style>
     <script>
         function rollD6() {
@@ -158,9 +173,10 @@
 
 <body class="container">
     <div class="container">
-        <h2 class="">Roll for Attribute Scores:</h2>
         <a href="https://company-of-the-winter-dnd.vercel.app/">
-            <h3>Back to Character Creator</h3>
+            <h2 class="">Back to Character Creator:</h2>
+
+            <h3>Roll Dice For Attribute Score:</h3>
         </a>
         <div id="die1" class="dice">0</div>
 
@@ -174,32 +190,32 @@
 
 
 
-            <button onclick="rollD4()">Roll 4 sided</button>
-            <h1>4 Sided die
+            <button onclick="rollD4()">Roll 4</button>
+            <h1>4 Sided
                 <div id="die0" class="dice">0</div>
             </h1>
 
-            <button onclick="rollD8()">Roll 8 sided</button>
-            <h1>8 Sided die
+            <button onclick="rollD8()">Roll 8</button>
+            <h1>8 Sided
                 <div id="die8" class="dice">0</div>
             </h1>
-            <button onclick="rollD10()">Roll 10 sided</button>
-            <h1>10 Sided die
+            <button onclick="rollD10()">Roll 10</button>
+            <h1>10 Sided
                 <div id="die4" class="dice">0</div>
             </h1>
-            <button onclick="rollD12()">Roll 12 sided</button>
+            <button onclick="rollD12()">Roll 12</button>
 
             <div class="container lower-dice">
-                <h1>12 Sided die
+                <h1>12 Sided
                     <div id="die5" class="dice">0</div>
                 </h1>
-                <button onclick="rollD20()">Roll 20 sided</button>
-                <h1>20 Sided die
+                <button onclick="rollD20()">Roll 20</button>
+                <h1>20 Sided
                     <div id="die6" class="dice">0</div>
                     Roll for encounters
                 </h1>
-                <button onclick="rollD100()">Roll 100 sided</button>
-                <h1>100 Sided die
+                <button onclick="rollD100()">Roll 100</button>
+                <h1>100 Sided
                     <div id="die7" class="dice">0</div>
                 </h1>
             </div>
